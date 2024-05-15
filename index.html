@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessible typography check</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Inclusive Sans']
+      }
+    });
+  </script>
+  <style>
+    :root {
+      --font-base: Inclusive Sans;
+      --font-one: Gill Sans;
+      --font-two: Comic Sans MS;
+    }
+    body {
+      font-family: var(--font-base), sans-serif;
+    }
+    ul {
+      padding: 0 2rem 0 0;
+    }
+    .font-one {
+      font-family: var(--font-one), sans-serif;
+    }
+    .font-two {
+      font-family: var(--font-two), sans-serif;
+    }
+    .criteria {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .details {
+      width: max(375px, 50vw);
+    }
+    .fonts {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+    .fonts li {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Accessible typography check</h1>
+      <section class="criteria">
+        <div class="details">
+          <h2>Open shapes</h2>
+          <p>Larger apertures are more legible and help provide unique shapes.</p>
+          <p>Pay attention to letters such as o, c, e or a.</p>
+        </div>
+        <section class="fonts">
+          <ul>
+            <li>cameo</li>
+            <li>locale</li>
+            <li>COeoca</li>
+          </ul>
+        </section>
+        <section class="fonts | font-one">
+          <ul>
+            <li>cameo</li>
+            <li>locale</li>
+            <li>COeoca</li>
+          </ul>
+        </section>
+        <section class="fonts | font-two">
+          <ul>
+            <li>cameo</li>
+            <li>locale</li>
+            <li>COeoca</li>
+          </ul>
+        </section>
+      </section>
+      <hr>
+      <section class="criteria">
+        <div class="details">
+          <h2>Joint letters</h2>
+          <p>Script typefaces can harder to read if letters join.</p>
+          <p>Some letter combinations can create unfamiliar shapes.</p>
+        </div>
+        <section class="fonts">
+          <ul>
+            <li>office</li>
+            <li>waffle</li>
+          </ul>
+        </section>
+        <section class="fonts | font-one">
+          <ul>
+            <li>office</li>
+            <li>waffle</li>
+          </ul>
+        </section>
+        <section class="fonts | font-two">
+          <ul>
+            <li>office</li>
+            <li>waffle</li>
+          </ul>
+        </section>
+      </section>
+      <hr>
+      <section class="criteria">
+        <div class="details">
+          <h2>Recognisable</h2>
+          <p>Check that multiple characters don’t share the same letterform.</p>
+          <p>Eg. upper case ‘i’, lower case ‘L’ and the number 1.</p>
+        </div>
+        <section class="fonts">
+          <ul>
+            <li>milliliter</li>
+            <li>Illinois</li>
+            <li>0O</li>
+          </ul>
+        </section>
+        <section class="fonts | font-one">
+          <ul>
+            <li>milliliter</li>
+            <li>Illinois</li>
+            <li>0O</li>
+          </ul>
+        </section>
+        <section class="fonts | font-two">
+          <ul>
+            <li>milliliter</li>
+            <li>Illinois</li>
+            <li>0O</li>
+          </ul>
+        </section>
+      </section>
+      <hr>
+      <section class="criteria">
+        <div class="details">
+          <h2>Mirroring</h2>
+          <p>Letters horizontally flipped should have distinct characteristics.</p>
+          <p>Pay attention to letters such as d and b, or q an p.</p>
+        </div>
+        <section class="fonts">
+          <ul>
+            <li>subdue</li>
+            <li>quip</li>
+          </ul>
+        </section>
+        <section class="fonts | font-one">
+          <ul>
+            <li>subdue</li>
+            <li>quip</li>
+          </ul>
+        </section>
+        <section class="fonts | font-two">
+          <ul>
+            <li>subdue</li>
+            <li>quip</li>
+          </ul>
+        </section>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
