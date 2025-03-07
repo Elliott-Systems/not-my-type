@@ -8,7 +8,7 @@ The idea is you’ll come across a font that you think will work, but in the end
 
 Demo - https://elliott-nmt.netlify.app/
 
-[^1]: [Inclusive Sans](https://www.oliviaking.com/inclusive-sans)
+[^1]: [Inclusive Sans](https://www.oliviaking.com/inclusivesans/feature)
 [^2]: Typography in Inclusive Design - [Part one](https://www.visionaustralia.org/business-consulting/digital-access/blog/typography-in-inclusive-design-part-1), [part two](https://www.visionaustralia.org/business-consulting/digital-access/blog/typography-in-inclusive-design-part-2)
 
 ## Usage
