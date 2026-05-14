@@ -44,6 +44,16 @@
     .fonts li {
       list-style: none;
     }
+    .xh-wrap {
+      position: relative;
+    }
+    .xh-wrap .line {
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      background-color: red;
+    }
   </style>
 </head>
 <body>
@@ -159,7 +169,63 @@
           </ul>
         </section>
       </section>
+      <hr>
+      <section class="criteria">
+        <div class="details">
+          <h2>Higher x-heights</h2>
+          <p>Fonts with taller x-heights are more legible, especially at smaller sizes.</p>
+        </div>
+        <section class="fonts">
+          <ul>
+            <li class="xh-wrap">giddy</li>
+            <li class="xh-wrap">X-ray</li>
+          </ul>
+        </section>
+        <section class="fonts | font-one">
+          <ul>
+            <li class="xh-wrap">giddy</li>
+            <li class="xh-wrap">X-ray</li>
+          </ul>
+        </section>
+        <section class="fonts | font-two">
+          <ul>
+            <li class="xh-wrap">giddy</li>
+            <li class="xh-wrap">X-ray</li>
+          </ul>
+        </section>
+      </section>
     </article>
   </main>
+  <script>
+    function drawXLines() {
+      var source = document.querySelector('.fonts:not(.font-one):not(.font-two) .xh-wrap');
+
+      var measure = document.createElement('span');
+      measure.style.cssText = 'display:inline-block;width:1ex;height:0;overflow:hidden;';
+      source.appendChild(measure);
+      var exHeight = measure.offsetWidth;
+      source.removeChild(measure);
+
+      var baseline = document.createElement('img');
+      baseline.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+      baseline.style.cssText = 'width:1px;height:1px;vertical-align:baseline;';
+      source.appendChild(baseline);
+      var baselineTop = baseline.offsetTop;
+      source.removeChild(baseline);
+
+      document.querySelectorAll('.xh-wrap').forEach(function(wrap) {
+        var xhLine = document.createElement('div');
+        xhLine.className = 'line';
+        xhLine.style.top = (baselineTop - exHeight) + 'px';
+        wrap.appendChild(xhLine);
+
+        var baseLine = document.createElement('div');
+        baseLine.className = 'line';
+        baseLine.style.top = baselineTop + 'px';
+        wrap.appendChild(baseLine);
+      });
+    }
+    window.addEventListener('load', drawXLines);
+  </script>
 </body>
 </html>
